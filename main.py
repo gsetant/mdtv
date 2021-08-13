@@ -82,7 +82,7 @@ def search_on_model(code):
     year = browser.find_elements_by_xpath('//*[@id="__layout"]/section/main/div[1]/div/div[1]/div[2]/ul[2]/li[3]/span[2]')[0].text
     year = year.replace('/', '-').replace('/', '-')
     meta_data.year = year
-    meta_data.originally_available_at = year[:4]
+    meta_data.originally_available_at = year
 
     actor_dic = {}
     actors = browser.find_elements_by_xpath('/html/body/div/div/section/main/div[1]/div/div[1]/div[2]/ul[2]/li[1]/span/a')
