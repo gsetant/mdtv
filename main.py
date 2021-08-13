@@ -35,7 +35,8 @@ def search(meta_info, user_setting):
 
     cache_data = check_cache(code, get_info('en').get('name'))
     if cache_data:
-        meta_data_list.append(cache_data)
+        for item in cache_data:
+            meta_data_list.append(item)
     else:
         # search for meta data from internet
         meta_data = search_on_model(code)
@@ -134,4 +135,4 @@ def get_actor_pic(browser, name):
             refresh_count += 1
         return image[0].screenshot_as_base64
     else:
-        return actor_placeholder
+        return actor_placeholder[1]
