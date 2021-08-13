@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-BROWSER_DRIVE = 'firefox'
+BROWSER_DRIVE = 'chrome'
 
 
 class BrowserTools:
