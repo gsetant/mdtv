@@ -32,6 +32,8 @@ def search(meta_info, user_setting):
     pattern = re.compile(r'[\u4e00-\u9fa5]')
     code = re.sub(pattern, "", video_title)  # 排除汉字
     code = re.sub('[{}]'.format(punctuation), "", code)  # 排除中文符号
+    if code[-1] == '-':
+        code = code[:-1]
 
     cache_data = check_cache(code, get_info('en').get('name'))
     if cache_data:
@@ -73,6 +75,8 @@ def search_on_model(code):
     meta_data.poster = picture_to_base64(process_image(post))
     meta_data.thumbnail = post
     title = browser.find_elements_by_xpath('//*[@id="__layout"]/section/main/div[1]/div/div[1]/div[2]/h1')[0].text
+    if '「预告」' in title:
+        title = title.replace('「预告」', '')
     meta_data.title = code + ' ' + title
     meta_data.code = code
     meta_data.studio = 'model media'
