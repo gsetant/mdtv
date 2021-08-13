@@ -51,11 +51,8 @@ def search_on_model(code):
     browser.get(URL)
     browser.find_element_by_xpath('/html/body/div/div/section/div/div[2]/div[2]/button').click()
 
-    search_xpath = '//*[@id="search"]/div[1]/input'
-    browser.find_element_by_xpath(search_xpath).send_keys(code)
-
-    search_key_xpath = '/html/body/div/div/section/header/ul/li[8]/div[1]/div/button'
-    browser.find_element_by_xpath(search_key_xpath).click()
+    search_url = URL + '/search?keyword=' + code
+    browser.get(search_url)
 
     sleep(4)  # Time in seconds
     result = '//*[@id="pane-相关视频"]/div/div'
