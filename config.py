@@ -20,7 +20,7 @@ def get_info(lang):
     return {
         'name': i18n.str('name'),
         'tittle': i18n.str('tittle'),
-        'version': '0.1.0',
+        'version': '0.1.3',
         'github': 'https://github.com/gsetant/MDTV',
         'icon': icon,
         'content': i18n.str('content')
