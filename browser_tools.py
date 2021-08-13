@@ -9,7 +9,7 @@ class BrowserTools:
 
     def get_browser(self):
 
-        if BROWSER_DRIVE is 'chrome':
+        if BROWSER_DRIVE is 'firefox':
             from selenium.webdriver.firefox.options import Options
             firefox_opt = Options()
             firefox_opt.headless = True
